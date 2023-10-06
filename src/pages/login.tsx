@@ -5,15 +5,10 @@ import { yariga } from "assets";
 
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import { ThemedTitleV2 } from "@refinedev/mui";
 
 import { CredentialResponse } from "../interfaces/google";
 
 // Todo: Update your Google Client ID here
-const GOOGLE_CLIENT_ID =
-  "1041339102270-e1fpe2b6v6u1didfndh7jkjmpcashs4f.apps.googleusercontent.com";
-
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
 
@@ -51,36 +46,36 @@ export const Login: React.FC = () => {
   return (
     <Box
       component={"div"}
-      sx={{ backgroundColor: '#FCFCFC'}}
-      >
-
-    <Container
-      style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      sx={{ backgroundColor: '#F5F5FA' }}
     >
-      <Box
-        display="flex"
-        gap="36px"
-        justifyContent="center"
-        flexDirection="column"
-        alignItems="center"
+
+      <Container
+        style={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-       <div>
-        <img src={yariga} alt="Yariga Logo" />
-       </div>
+        <Box
+          display="flex"
+          gap="36px"
+          justifyContent="center"
+          flexDirection="column"
+          alignItems="center"
+        >
+          <div>
+            <img src={yariga} alt="Yariga Logo" />
+          </div>
 
-        
 
-       <Box mt={4}>
-       <GoogleButton />
-       </Box>
-        
-      </Box>
-    </Container>
+
+          <Box mt={4}>
+            <GoogleButton />
+          </Box>
+
+        </Box>
+      </Container>
     </Box>
   );
 };
